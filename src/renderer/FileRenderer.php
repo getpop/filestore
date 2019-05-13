@@ -9,24 +9,26 @@ use PoP\FileStore\Store\FileStoreInterface;
 class FileRenderer implements FileRendererInterface
 {
     private $fileStore;
-    public function __construct(FileStoreInterface $fileStore)
+    private $separator;
+    public function __construct(FileStoreInterface $fileStore, string $separator = PHP_EOL)
     {
         $this->fileStore = $fileStore;
+        $this->separator = $separator;
     }
-    public function render(AbstractFile $file, $separator = PHP_EOL): string
+    public function render(AbstractFile $file): string
     {
         // Render the content
         $renderedFragments = array_map(function($fragment) {
             return $this->renderFragment($fragment);
         }, $file->getFragments());
 
-        return implode($separator, $renderedFragments);
+        return implode($this->separator, $renderedFragments);
     }
 
-    public function renderAndSave(AbstractFile $file, $separator = PHP_EOL): void
+    public function renderAndSave(AbstractFile $file): void
     {
         // Render and save the content
-        $contents = $this->render($file, $separator);
+        $contents = $this->render($file);
         $this->fileStore->save($file, $contents);
     }
 
