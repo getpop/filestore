@@ -29,7 +29,10 @@
     "autoload": {
         "psr-4": {
             "PoP\\FileStore\\": "src"
-        }
+        },
+        "files": [
+            "initialize.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
