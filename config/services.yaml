@@ -3,3 +3,5 @@ services:
         class: \PoP\FileStore\Store\FileStore
     \PoP\FileStore\Contracts\JSONFileStore:
         class: \PoP\FileStore\Store\JSONFileStore
+    \PoP\FileStore\Contracts\FileRenderer:
+        class: \PoP\FileStore\Renderer\FileRenderer
