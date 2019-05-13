@@ -5,3 +5,5 @@ services:
         class: \PoP\FileStore\Store\JSONFileStore
     \PoP\FileStore\Contracts\FileRenderer:
         class: \PoP\FileStore\Renderer\FileRenderer
+        arguments:
+            $fileStore: '@\PoP\FileStore\Contracts\FileStore'
