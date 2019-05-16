@@ -8,6 +8,6 @@ class JSONFileStore
 {
     public static function getInstance(): FileStoreInterface
     {
-        return ContainerBuilderFactory::getInstance()->get('\PoP\FileStore\Contracts\JSONFileStore');
+        return ContainerBuilderFactory::getInstance()->get('json_file_store');
     }
 }

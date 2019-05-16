@@ -1,9 +1,9 @@
 services:
-    \PoP\FileStore\Contracts\FileStore:
+    file_store:
         class: \PoP\FileStore\Store\FileStore
-    \PoP\FileStore\Contracts\JSONFileStore:
+    json_file_store:
         class: \PoP\FileStore\Store\JSONFileStore
-    \PoP\FileStore\Contracts\FileRenderer:
+    file_renderer:
         class: \PoP\FileStore\Renderer\FileRenderer
         arguments:
-            $fileStore: '@\PoP\FileStore\Contracts\FileStore'
+            $fileStore: '@file_store'

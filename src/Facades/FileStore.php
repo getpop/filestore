@@ -8,6 +8,6 @@ class FileStore
 {
     public static function getInstance(): FileStoreInterface
     {
-        return ContainerBuilderFactory::getInstance()->get('\PoP\FileStore\Contracts\FileStore');
+        return ContainerBuilderFactory::getInstance()->get('file_store');
     }
 }

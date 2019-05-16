@@ -8,6 +8,6 @@ class FileRenderer
 {
     public static function getInstance(): FileRendererInterface
     {
-        return ContainerBuilderFactory::getInstance()->get('\PoP\FileStore\Contracts\FileRenderer');
+        return ContainerBuilderFactory::getInstance()->get('file_renderer');
     }
 }
