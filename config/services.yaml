@@ -1,4 +1,7 @@
 services:
+    _defaults:
+        public: true
+        
     file_store:
         class: \PoP\FileStore\Store\FileStore
     json_file_store:
