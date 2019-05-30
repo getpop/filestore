@@ -3,7 +3,6 @@ namespace PoP\FileStore\Renderer;
 
 use PoP\FileStore\File\AbstractFile;
 use PoP\FileStore\File\AbstractRenderableFileFragment;
-use PoP\FileStore\Facades\FileStore;
 use PoP\FileStore\Store\FileStoreInterface;
 
 class FileRenderer implements FileRendererInterface

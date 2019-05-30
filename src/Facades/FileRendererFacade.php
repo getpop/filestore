@@ -4,7 +4,7 @@ namespace PoP\FileStore\Facades;
 use PoP\FileStore\Renderer\FileRendererInterface;
 use PoP\Root\Container\ContainerBuilderFactory;
 
-class FileRenderer
+class FileRendererFacade
 {
     public static function getInstance(): FileRendererInterface
     {
