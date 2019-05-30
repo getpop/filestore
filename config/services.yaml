@@ -1,12 +1,10 @@
-services:
-    _defaults:
-        public: true
-        
+services:        
     file_store:
         class: \PoP\FileStore\Store\FileStore
     json_file_store:
         class: \PoP\FileStore\Store\JSONFileStore
     file_renderer:
         class: \PoP\FileStore\Renderer\FileRenderer
+        public: true
         arguments:
             $fileStore: '@file_store'
