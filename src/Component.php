@@ -5,7 +5,7 @@ use PoP\Root\Component\AbstractComponent;
 use PoP\Root\Component\YAMLServicesTrait;
 
 /**
- * Class required to check if this component exists and is active
+ * Initialize component
  */
 class Component extends AbstractComponent
 {
