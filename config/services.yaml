@@ -3,6 +3,7 @@ services:
         class: \PoP\FileStore\Store\FileStore
     json_file_store:
         class: \PoP\FileStore\Store\JSONFileStore
+        public: true
     file_renderer:
         class: \PoP\FileStore\Renderer\FileRenderer
         public: true
