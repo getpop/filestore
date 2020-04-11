@@ -20,7 +20,7 @@
     "prefer-stable": true,
     "require": {
         "php" : "~7.1",
-        "getpop/root": "^1.0@dev"
+        "getpop/root": ">=0.1"
     },
     "require-dev": {
         "phpunit/phpunit" : ">=7.0",
