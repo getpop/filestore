@@ -38,7 +38,6 @@ class FileStore implements FileStoreInterface
     {
         $filePath = $file->getFilepath();
         if (file_exists($filePath)) {
-            
             // Return the file contents
             return file_get_contents($filePath);
         }

@@ -7,6 +7,6 @@ abstract class AbstractAccessibleFile extends AbstractFile
 
     public function getFileurl()
     {
-        return $this->getUrl().'/'.$this->getFilename();
+        return $this->getUrl() . '/' . $this->getFilename();
     }
 }

@@ -9,6 +9,6 @@ abstract class AbstractFile
 
     public function getFilepath()
     {
-        return $this->getDir().'/'.$this->getFilename();
+        return $this->getDir() . '/' . $this->getFilename();
     }
 }

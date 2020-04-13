@@ -16,7 +16,7 @@ abstract class AbstractRenderableFileFragment
     }
 
     public function getJsonEncodeOptions()
-    {   
+    {
         // Documentation: https://secure.php.net/manual/en/function.json-encode.php
         return 0;
     }
