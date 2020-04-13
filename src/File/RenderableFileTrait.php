@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace PoP\FileStore\File;
 
 trait RenderableFileTrait
@@ -10,7 +13,7 @@ trait RenderableFileTrait
         if (is_null($this->fragments)) {
             $this->fragments = $this->getFragmentObjects();
         }
-        
+
         return $this->fragments;
     }
 

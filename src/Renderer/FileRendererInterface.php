@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace PoP\FileStore\Renderer;
 
 use PoP\FileStore\File\AbstractFile;
