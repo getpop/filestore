@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PoP\FileStore\Renderer;
 
-use PoP\FileStore\File\AbstractFile;
+use PoP\FileStore\File\AbstractAccessibleRenderableFile;
 use PoP\FileStore\File\AbstractRenderableFileFragment;
 use PoP\FileStore\Store\FileStoreInterface;
 
@@ -17,7 +17,7 @@ class FileRenderer implements FileRendererInterface
         $this->fileStore = $fileStore;
         $this->separator = $separator;
     }
-    public function render(AbstractFile $file): string
+    public function render(AbstractAccessibleRenderableFile $file): string
     {
         // Render the content
         $renderedFragments = array_map(function ($fragment) {
@@ -27,7 +27,7 @@ class FileRenderer implements FileRendererInterface
         return implode($this->separator, $renderedFragments);
     }
 
-    public function renderAndSave(AbstractFile $file): void
+    public function renderAndSave(AbstractAccessibleRenderableFile $file): void
     {
         // Render and save the content
         $contents = $this->render($file);

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace PoP\FileStore\Renderer;
 
-use PoP\FileStore\File\AbstractFile;
+use PoP\FileStore\File\AbstractAccessibleRenderableFile;
 
 interface FileRendererInterface
 {
-    public function render(AbstractFile $file): string;
-    public function renderAndSave(AbstractFile $file): void;
+    public function render(AbstractAccessibleRenderableFile $file): string;
+    public function renderAndSave(AbstractAccessibleRenderableFile $file): void;
 }
