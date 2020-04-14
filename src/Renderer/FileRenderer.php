@@ -38,7 +38,9 @@ class FileRenderer implements FileRendererInterface
     {
         $contents = file_get_contents($fragment->getAssetsPath());
         foreach ($fragment->getConfiguration() as $key => $replacement) {
-            $value = $fragment->isJsonReplacement() ? json_encode($replacement, $fragment->getJsonEncodeOptions()) : $replacement;
+            $value = $fragment->isJsonReplacement() ?
+                json_encode($replacement, $fragment->getJsonEncodeOptions()) :
+                $replacement;
             $contents = str_replace($key, $value, $contents);
         }
         return $contents;
