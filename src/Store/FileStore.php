@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PoP\FileStore\Store;
 
+use RuntimeException;
 use PoP\FileStore\File\AbstractFile;
 
 class FileStore implements FileStoreInterface
@@ -16,12 +17,17 @@ class FileStore implements FileStoreInterface
         $dir = dirname($filePath);
         if (!file_exists($dir)) {
             // Create folder
-            @mkdir($dir, 0777, true);
+            if (@mkdir($dir, 0777, true) === false) {
+                throw new RuntimeException('The directory '.$dir.' could not be created.');
+            }
         }
 
         // Open the file, write content and close it
         $handle = fopen($filePath, "wb");
-        $numbytes = fwrite($handle, $contents);
+        if ($handle === false) {
+            throw new RuntimeException('The file '.$filePath.' could not be opened.');
+        }
+        fwrite($handle, $contents);
         fclose($handle);
     }
 
