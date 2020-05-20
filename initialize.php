@@ -1,2 +1,2 @@
 <?php
-\PoP\FileStore\Component::init();
+//\PoP\FileStore\Component::initialize();
