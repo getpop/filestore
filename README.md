@@ -25,7 +25,9 @@ composer require getpop/filestore
 Initialize the component:
 
 ``` php
-\PoP\FileStore\Component::initialize();
+\PoP\Root\ComponentLoader::initializeComponents([
+    \PoP\FileStore\Component::class,
+]);
 ```
 
 ## Standards
