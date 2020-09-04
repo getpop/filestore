@@ -11,6 +11,10 @@ class FileStoreFacade
 {
     public static function getInstance(): FileStoreInterface
     {
-        return ContainerBuilderFactory::getInstance()->get('file_store');
+        /**
+         * @var FileStoreInterface
+         */
+        $service = ContainerBuilderFactory::getInstance()->get('file_store');
+        return $service;
     }
 }

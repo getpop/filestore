@@ -11,6 +11,10 @@ class JSONFileStoreFacade
 {
     public static function getInstance(): FileStoreInterface
     {
-        return ContainerBuilderFactory::getInstance()->get('json_file_store');
+        /**
+         * @var FileStoreInterface
+         */
+        $service = ContainerBuilderFactory::getInstance()->get('json_file_store');
+        return $service;
     }
 }

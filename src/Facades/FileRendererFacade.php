@@ -11,6 +11,10 @@ class FileRendererFacade
 {
     public static function getInstance(): FileRendererInterface
     {
-        return ContainerBuilderFactory::getInstance()->get('file_renderer');
+        /**
+         * @var FileRendererInterface
+         */
+        $service = ContainerBuilderFactory::getInstance()->get('file_renderer');
+        return $service;
     }
 }
