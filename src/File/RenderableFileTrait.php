@@ -6,7 +6,10 @@ namespace PoP\FileStore\File;
 
 trait RenderableFileTrait
 {
-    private $fragments;
+    /**
+     * @var string[]|null
+     */
+    private ?array $fragments = null;
 
     public function getFragments()
     {

@@ -10,10 +10,13 @@ use PoP\FileStore\Store\FileStoreInterface;
 
 class FileRenderer implements FileRendererInterface
 {
-    private $fileStore;
-    private $separator;
-    public function __construct(FileStoreInterface $fileStore, string $separator = PHP_EOL)
-    {
+    private FileStoreInterface $fileStore;
+    private string $separator;
+
+    public function __construct(
+        FileStoreInterface $fileStore,
+        string $separator = PHP_EOL
+    ) {
         $this->fileStore = $fileStore;
         $this->separator = $separator;
     }
