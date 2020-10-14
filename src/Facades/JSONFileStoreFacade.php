@@ -14,7 +14,7 @@ class JSONFileStoreFacade
         /**
          * @var FileStoreInterface
          */
-        $service = ContainerBuilderFactory::getInstance()->get('json_file_store');
+        $service = ContainerBuilderFactory::getInstance()->get(FileStoreInterface::class);
         return $service;
     }
 }

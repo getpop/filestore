@@ -14,7 +14,7 @@ class FileStoreFacade
         /**
          * @var FileStoreInterface
          */
-        $service = ContainerBuilderFactory::getInstance()->get('file_store');
+        $service = ContainerBuilderFactory::getInstance()->get(FileStoreInterface::class);
         return $service;
     }
 }
