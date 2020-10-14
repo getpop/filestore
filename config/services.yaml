@@ -1,13 +1,11 @@
 services:
-    _defaults:
-        public: true
-        autowire: true
-    PoP\FileStore\Store\FileStoreInterface:
+    file_store:
         class: \PoP\FileStore\Store\FileStore
-        public: false
-    PoP\FileStore\Store\FileStoreInterface:
+    json_file_store:
         class: \PoP\FileStore\Store\JSONFileStore
+        public: true
     PoP\FileStore\Renderer\FileRendererInterface:
         class: \PoP\FileStore\Renderer\FileRenderer
-        # arguments:
-        #     $fileStore: '@file_store'
+        public: true
+        arguments:
+            $fileStore: '@file_store'
