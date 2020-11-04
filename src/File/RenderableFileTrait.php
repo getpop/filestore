@@ -7,11 +7,14 @@ namespace PoP\FileStore\File;
 trait RenderableFileTrait
 {
     /**
-     * @var string[]|null
+     * @var AbstractRenderableFileFragment[]|null
      */
     private ?array $fragments = null;
 
-    public function getFragments()
+    /**
+     * @return AbstractRenderableFileFragment[]
+     */
+    public function getFragments(): array
     {
         if (is_null($this->fragments)) {
             $this->fragments = $this->getFragmentObjects();
@@ -20,5 +23,8 @@ trait RenderableFileTrait
         return $this->fragments;
     }
 
+    /**
+     * @return AbstractRenderableFileFragment[]
+     */
     abstract protected function getFragmentObjects(): array;
 }

@@ -6,19 +6,22 @@ namespace PoP\FileStore\File;
 
 abstract class AbstractRenderableFileFragment
 {
-    abstract public function getAssetsPath();
+    abstract public function getAssetsPath(): string;
 
-    public function getConfiguration()
+    /**
+     * @return mixed[]
+     */
+    public function getConfiguration(): array
     {
         return array();
     }
 
-    public function isJsonReplacement()
+    public function isJsonReplacement(): bool
     {
         return true;
     }
 
-    public function getJsonEncodeOptions()
+    public function getJsonEncodeOptions(): int
     {
         // Documentation: https://secure.php.net/manual/en/function.json-encode.php
         return 0;

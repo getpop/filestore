@@ -40,6 +40,9 @@ class FileRenderer implements FileRendererInterface
     protected function renderFragment(AbstractRenderableFileFragment $fragment): string
     {
         $contents = file_get_contents($fragment->getAssetsPath());
+        if ($contents === false) {
+            return '';
+        }
         foreach ($fragment->getConfiguration() as $key => $replacement) {
             $value = $fragment->isJsonReplacement() ?
                 json_encode($replacement, $fragment->getJsonEncodeOptions()) :

@@ -9,7 +9,10 @@ use PoP\FileStore\File\AbstractFile;
 
 class FileStore implements FileStoreInterface
 {
-    public function save(AbstractFile $file, $contents)
+    /**
+     * @param mixed $contents
+     */
+    public function save(AbstractFile $file, $contents): void
     {
         $filePath = $file->getFilepath();
 
@@ -31,7 +34,7 @@ class FileStore implements FileStoreInterface
         fclose($handle);
     }
 
-    public function delete(AbstractFile $file)
+    public function delete(AbstractFile $file): bool
     {
         $filePath = $file->getFilepath();
 
@@ -43,12 +46,19 @@ class FileStore implements FileStoreInterface
         return false;
     }
 
+    /**
+     * @return mixed
+     */
     public function get(AbstractFile $file)
     {
         $filePath = $file->getFilepath();
         if (file_exists($filePath)) {
             // Return the file contents
-            return file_get_contents($filePath);
+            $contents = file_get_contents($filePath);
+            if ($contents === false) {
+                return null;
+            }
+            return $contents;
         }
 
         return null;
