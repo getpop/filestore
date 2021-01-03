@@ -20,6 +20,10 @@ Via Composer
 composer require getpop/filestore
 ```
 
+## Development
+
+The source code is hosted on the [PoP monorepo](https://github.com/leoloso/PoP), under [`Engine/packages/filestore`](https://github.com/leoloso/PoP/tree/master/layers/Engine/packages/filestore).
+
 ## Usage
 
 Initialize the component:
@@ -46,7 +50,7 @@ Same as the [Supported PHP features for `getpop/root`](https://github.com/getpop
 Via [Rector](https://github.com/rectorphp/rector) (dry-run mode):
 
 ```bash
-composer downgrade-code
+composer preview-code-downgrade
 ```
 
 ## Standards
@@ -105,5 +109,5 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [link-scrutinizer]: https://scrutinizer-ci.com/g/getpop/filestore/code-structure
 [link-code-quality]: https://scrutinizer-ci.com/g/getpop/filestore
 [link-downloads]: https://packagist.org/packages/getpop/filestore
-[link-contributors]: ../../contributors
+[link-contributors]: ../../../../../../contributors
 [link-author]: https://github.com/leoloso
