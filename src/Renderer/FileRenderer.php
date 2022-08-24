@@ -18,7 +18,7 @@ class FileRenderer implements FileRendererInterface
     public function render(AbstractAccessibleRenderableFile $file): string
     {
         // Render the content
-        $renderedFragments = array_map(function ($fragment) {
+        $renderedFragments = array_map(function ($fragment): string {
             return $this->renderFragment($fragment);
         }, $file->getFragments());
 
@@ -40,7 +40,7 @@ class FileRenderer implements FileRendererInterface
         }
         foreach ($fragment->getConfiguration() as $key => $replacement) {
             $value = $fragment->isJsonReplacement() ?
-                json_encode($replacement, $fragment->getJsonEncodeOptions()) :
+                (string)json_encode($replacement, $fragment->getJsonEncodeOptions()) :
                 $replacement;
             $contents = str_replace($key, $value, $contents);
         }
